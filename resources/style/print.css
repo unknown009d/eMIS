@@ -1,0 +1,163 @@
+:root {
+  --border-print-color: #000000;
+  --border-print: 1px solid var(--border-print-color);
+}
+
+.print_area {
+  max-width: 720px;
+  margin: 1.5rem auto;
+  border: var(--border-print);
+  /* border-right: none; */
+  /* border-left: none; */
+  font-size: 0.8rem;
+  overflow: hidden;
+  /* padding: 0 0.5rem; */
+}
+
+
+.print_area h5 {
+  font-weight: 600;
+  transform: scale(1.2, 0.8) translateX(8.2%);
+}
+
+.print_area .row .border-pore {
+  border-right: var(--border-print);
+}
+.print_area .border-niche {
+  border-bottom: var(--border-print);
+}
+
+.print_area .srf_title {
+  font-family: serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+.bg-pcolor {
+  background-color: #eaeaff8f;
+  border: 1px solid #eaeaff;
+  border-left: none;
+  border-right: none;
+}
+
+.print_area th:first-child,
+.print_area td:first-child {
+  border-left-width: 0px;
+}
+.print_area th:last-child,
+.print_area td:last-child {
+  border-right-width: 0px;
+}
+
+.table-top-border-none {
+  border-top-width: 0px !important;
+}
+
+.printinfo {
+  width: 80%;
+  text-align: left;
+  margin: auto;
+  display: flex;
+}
+
+.print_area table {
+  table-layout: fixed;
+  margin-bottom: 0;
+}
+
+.print_area table td {
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.cus-list {
+  list-style-type: none;
+  counter-reset: custom-counter;
+  padding: 0;
+  margin: 0;
+}
+
+.cus-list li::before {
+  content: counter(custom-counter) ".";
+  counter-increment: custom-counter;
+  margin-right: 1rem;
+}
+
+.dtable,
+.dtable th,
+.dtable td {
+  border: var(--border-print);
+  border-collapse: collapse;
+  border-right: 0;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.dtable th,
+.dtable-light {
+  background-color: #eeeeee;
+}
+
+.dtable,
+.dtable th:first-child,
+.dtable td:first-child {
+  border-left: 0;
+}
+
+/* Border bottom with dotted */
+.dbb {
+  border-bottom: 2px dotted #00000090;
+  width: fit-content;
+  padding: 0 0.5rem;
+}
+
+.fs-7{
+  font-size: 0.9rem;
+}
+
+.termsncon{
+  font-size: 0.6rem;
+}
+.termsncon ol{
+  padding-left: 1.5rem;
+}
+
+.print_area .phead{
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  line-height: 120%;
+}
+.print_area .wide-text{
+  font-size: 0.85rem;
+  transform: scale(1.25, 0.88);
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+    zoom: 60%;
+  }
+  .print_area {
+    -webkit-print-color-adjust: exact; /* For Chrome and Safari */
+    print-color-adjust: exact;
+    max-width: 100%;
+    margin: 1.5rem;
+  }
+  .page-break-after {
+    page-break-after: always;
+  }
+  .page-break-before {
+    page-break-before: always;
+  }
+  .sidebar {
+    display: none;
+  }
+  .actionContainer {
+    display: none !important;
+  }
+}

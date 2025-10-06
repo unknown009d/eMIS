@@ -1,0 +1,6 @@
+assets/
+bootstrap/
+bootstrap-icons/
+.htaccess
+mis_db.sql
+api/config.php
